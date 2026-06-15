@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapchat | Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <div class="logo">
+            <h1 style="color: #FFFC00; font-size: 48px; font-weight: bold;">snapchat</h1>
+        </div>
+
+        <form class="login-form" onsubmit="return validateLogin()">
+            <div class="form-group">
+                <label>Username or Email</label>
+                <input type="text" id="login-email" class="form-input" placeholder="Enter email or username" required>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="login-pass" class="form-input" placeholder="Enter password" required>
+            </div>
+
+            <div class="form-options">
+                <label class="remember-me">
+                    <input type="checkbox"> Remember Me
+                </label>
+                <a href="#" class="forgot-link">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="btn login-btn">LOG IN</button>
+            <p class="switch-page">Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </form>
+    </div>
+
+    <script>
+        function validateLogin() {
+            let email = document.getElementById('login-email').value.trim();
+            let pass = document.getElementById('login-pass').value.trim();
+
+            if (email === "" || pass === "") {
+                alert("Please fill in all fields!");
+                return false;
+            }
+            if (pass.length < 6) {
+                alert("Password must be at least 6 characters!");
+                return false;
+            }
+            alert("Login successful! Redirecting...");
+            return true;
+        }
+    </script>
+</body>
+</html>
